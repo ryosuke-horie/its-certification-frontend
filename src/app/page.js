@@ -3,93 +3,97 @@ import styles from './page.module.css'
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
+    // Header section
+    <div className={styles.container}>
+      <header className={styles.header}>
+        <Image
+          src="/images/logo.svg"
+          alt="logo"
+          width={100}
+          height={100}
+        />
+        <h1 className={styles.title}>
+          資格受験共有サイト
+        </h1>
+        {/* メニュー サンプルで２個出す */}
+        <nav className={styles.nav}>
+          <ul className={styles.navList}>
+            <li className={styles.navItem}>
+              <a href="#" className={styles.navLink}>
+                メニュー１
+              </a>
+            </li>
+            <li className={styles.navItem}>
+              <a href="#" className={styles.navLink}>
+                メニュー２
+              </a>
+            </li>
+          </ul>
+        </nav>
+        {/* サインインボタン */}
+        <div className={styles.signin}>
+          <a href="#" className={styles.signinLink}>
+            サインイン
+          </a>
+        </div>
+      </header>
+
+      {/* コンテンツ部分 */}
+      {/* 試験名毎のボタンを配置する場所 */}
+      {/* 仮でAWS SAAとHTMLCSS認定 の２つのアイコンを並べる  */}
+      <div className={styles.content}>
+        <div className={styles.card}>
+          <a href="#" className={styles.cardLink}>
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
+              src="/images/aws-saa.png"
+              alt="aws-saa"
               width={100}
-              height={24}
-              priority
+              height={100}
             />
+            <h2 className={styles.cardTitle}>
+              AWS SAA
+            </h2>
+          </a>
+        </div>
+        <div className={styles.card}>
+          <a href="#" className={styles.cardLink}>
+            <Image
+              src="/images/htmlcss.png"
+              alt="htmlcss"
+              width={100}
+              height={100}
+            />
+            <h2 className={styles.cardTitle}>
+              HTMLCSS認定
+            </h2>
           </a>
         </div>
       </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      {/* 受験記録をここに記載する */}
+      {/* 仮でAWS SAAの受験記録を記載する */}
+      <div className={styles.content}>
+        <div className={styles.card}>
+          <a href="#" className={styles.cardLink}>
+            <h2 className={styles.cardTitle}>
+              AWS SAA
+            </h2>
+            <p className={styles.cardText}>
+              2021/10/10
+            </p>
+          </a>
+        </div>
+        <div className={styles.card}>
+          <a href="#" className={styles.cardLink}>
+            <h2 className={styles.cardTitle}>
+              AWS SAA
+            </h2>
+            <p className={styles.cardText}>
+              2021/10/10
+            </p>
+          </a>
+        </div>
       </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   )
 }
